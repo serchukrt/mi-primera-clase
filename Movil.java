@@ -26,4 +26,10 @@ public class Movil{
     public void setEstado(boolean encendido){
         estado = encendido;
     }
+    public void imprimirDetalles(){
+        System.out.println("Modelo: " + modelo + " | Porcentaje de la Bateria: " + bateria + " | Estado: " + estado);
+    }
+    public String getDetalles(){
+        return "Modelo: " + modelo + " | Porcentaje de la Bateria: " + bateria + " | Estado: " + estado;
+    }
 }
