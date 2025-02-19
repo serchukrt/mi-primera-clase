@@ -3,10 +3,10 @@ public class Movil{
     private int bateria;
     private boolean estado;
     
-    public Movil(String nombreModelo, int porcentajeDeBateria, boolean encendido){
+    public Movil(String nombreModelo, int porcentajeDeBateria){
         modelo = nombreModelo;
         bateria = porcentajeDeBateria;
-        estado = encendido;
+        estado = false;
     }
     public String getModelo(){
         return modelo;
@@ -21,15 +21,29 @@ public class Movil{
         modelo = nombreModelo;
     }
     public void setBateria(int porcentajeDeBateria){
-        bateria = porcentajeDeBateria;
+        bateria = 0;
+        bateria = bateria + porcentajeDeBateria;
     }
-    public void setEstado(boolean encendido){
-        estado = encendido;
+    public void setEstado(){
+        if(estado == false){
+            estado = true;
+        }
+        else{
+            estado = false;
+        }
     }
     public void imprimirDetalles(){
-        System.out.println("Modelo: " + modelo + " | Porcentaje de la Bateria: " + bateria + " | Estado: " + estado);
+        String estadoString = "apagado";
+        if(estado == true){
+            estadoString = "encendido";
+        }
+        System.out.println("Modelo: " + modelo + " | Porcentaje de la Bateria: " + bateria + " | Estado: " + estadoString);
     }
     public String getDetalles(){
-        return "Modelo: " + modelo + " | Porcentaje de la Bateria: " + bateria + " | Estado: " + estado;
+        String estadoString = "apagado";
+        if(estado == true){
+            estadoString = "encendido";
+        }
+        return "Modelo: " + modelo + " | Porcentaje de la Bateria: " + bateria + " | Estado: " + estadoString;
     }
 }
