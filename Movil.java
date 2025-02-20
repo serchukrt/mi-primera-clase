@@ -20,9 +20,8 @@ public class Movil{
     public void setModelo(String nombreModelo){
         modelo = nombreModelo;
     }
-    public void setBateria(int porcentajeDeBateria){
-        bateria = 0;
-        bateria = bateria + porcentajeDeBateria;
+    public void cargarMovil(int porcentajeDeCarga){
+        bateria = bateria + porcentajeDeCarga;
     }
     public void setEstado(){
         if(estado == false){
